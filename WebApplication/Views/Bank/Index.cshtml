@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Title = "Банк";
+}
+
+<h2>Bank</h2>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <h4>Bills</h4>
+        <div class="col-md-12">
+            <p>
+                <a class="btn" href="@Url.Action("AccountReport")">Go to bills page</a>
+            </p>
+        </div>
+    </div>
+    @*<div class="col-md-6">
+        <h2>Transaction</h2>
+        <div class="col-md-6">
+            <p>
+                <a class="btn btn-default" href="@Url.Action("DayTransactionsReport")">Go to this this day report page &raquo;</a>
+            </p>
+        </div>
+        <div class="col-md-6">
+            <p>
+                <a class="btn btn-default" href="@Url.Action("PreviousDayTransactionsReport")">Go to previous day report page &raquo;</a>
+            </p>
+        </div>
+    </div>*@
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <h4>Closing</h4>
+       
+            <div class="col-md-7">
+                @using (Html.BeginForm("CloseBankDay", "Bank"))
+                {
+                    <button type="submit" class="btn" style="width:200px">Close day</button>
+                }
+            </div>
+            <div class="col-md-7">
+                @using (Html.BeginForm("CloseBankMonth", "Bank"))
+                {
+                    <button type="submit" class="btn" style="width:200px">Close month</button>
+                }
+            </div>
+            <div class="col-md-7">
+                @using (Html.BeginForm("CloseBankYear", "Bank"))
+                {
+                    <button type="submit" class="btn" style="width:200px">Close year</button>
+                }
+            </div>
+        
+    </div>
+</div>
+
